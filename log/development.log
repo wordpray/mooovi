@@ -3819,3 +3819,54 @@ Command :: convert '/var/folders/pv/cbrvps4505b0vgv1k192t1400000gn/T/c4ca4238a0b
 Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/pv/cbrvps4505b0vgv1k192t1400000gn/T/c4ca4238a0b923820dcc509a6f75849b20170615-69335-1i7mgil.jpg[0]' 2>/dev/null
 Command :: identify -format %m '/var/folders/pv/cbrvps4505b0vgv1k192t1400000gn/T/c4ca4238a0b923820dcc509a6f75849b20170615-69335-1i7mgil.jpg[0]'
 Command :: convert '/var/folders/pv/cbrvps4505b0vgv1k192t1400000gn/T/c4ca4238a0b923820dcc509a6f75849b20170615-69335-1i7mgil.jpg[0]' -auto-orient -resize "x100" -crop "100x100+38+0" +repage '/var/folders/pv/cbrvps4505b0vgv1k192t1400000gn/T/1d381f252899c88a37165bb85a93ced520170615-69335-16azcl7'
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/ysk/projects/mooovi/app/models/user.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/ysk/projects/mooovi/app/models/user.rb:6)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddNicknameToUsers (20170615033932)
+  [1m[35m (26.6ms)[0m  ALTER TABLE `users` ADD `nickname` varchar(255)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170615033932')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mooovi_development'
+  AND fk.table_name = 'products'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `products`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mooovi_development'
+  AND fk.table_name = 'reviews'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `reviews`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mooovi_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
