@@ -2246,3 +2246,1501 @@ WHERE fk.referenced_column_name is not null
   [1m[35m (0.4ms)[0m  SELECT COUNT(*) AS count_all, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`
   [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) AS count_all, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`[0m
   [1m[35m (0.4ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20170615024207)
+  [1m[35m (39.0ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (11.8ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (13.6ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170615024207')
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mooovi_development'
+  AND fk.table_name = 'products'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `products`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mooovi_development'
+  AND fk.table_name = 'reviews'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `reviews`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'mooovi_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/users/sign_up" for ::1 at 2017-06-15 11:43:04 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 131ms (Views: 90.2ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:43:04 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:43:04 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:43:04 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:43:04 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:43:04 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:43:04 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:43:04 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:43:04 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:43:04 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:43:04 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-06-15 11:43:13 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:43:13 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:43:13 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:43:13 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:43:13 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:43:13 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:43:13 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:43:13 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:43:13 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:43:13 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:43:13 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-06-15 11:43:51 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 2383ms (Views: 2363.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:43:54 +0900
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:43:54 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:43:54 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:43:54 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:43:54 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:43:54 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:43:54 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:43:54 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:43:54 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:43:54 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-06-15 11:46:58 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:46:58 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:46:58 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:46:58 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:46:58 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:46:58 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:46:58 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:46:58 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:46:58 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:46:58 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:46:58 +0900
+
+
+Started GET "/" for ::1 at 2017-06-15 11:47:00 +0900
+Processing by ProductsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.8ms)[0m  [1mSELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218
+  Rendered products/index.html.erb within layouts/review_site (34.4ms)
+Completed 200 OK in 80ms (Views: 36.1ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/images/icons/icon-movie-poster.png" for ::1 at 2017-06-15 11:47:00 +0900
+
+ActionController::RoutingError (No route matches [GET] "/images/icons/icon-movie-poster.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.8ms)
+
+
+Started GET "/assets/bambi-1.0.0.ttf?20140712" for ::1 at 2017-06-15 11:47:00 +0900
+
+
+Started GET "/" for ::1 at 2017-06-15 11:47:05 +0900
+Processing by ProductsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  [1m[35mProduct Load (0.5ms)[0m  SELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35m (0.1ms)[0m  SELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218[0m
+  Rendered products/index.html.erb within layouts/review_site (12.7ms)
+Completed 200 OK in 23ms (Views: 17.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:47:05 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:47:05 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:47:05 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:47:05 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:47:05 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:47:05 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:47:05 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:47:05 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:47:05 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:47:05 +0900
+
+
+Started GET "/images/icons/icon-movie-poster.png" for ::1 at 2017-06-15 11:47:06 +0900
+
+ActionController::RoutingError (No route matches [GET] "/images/icons/icon-movie-poster.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (70.6ms)
+
+
+Started GET "/assets/bambi-1.0.0.ttf?20140712" for ::1 at 2017-06-15 11:47:06 +0900
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-06-15 11:47:07 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FQIPPjILgnEMu3IhELqZt1o6d5ZZEDo8tZVWwzZb9dPDark0mXDwWlMf0Hw1w8Xn+LDC+p5/CJeLz1FVLGYAzw=="}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 11:47:07 +0900
+Processing by ProductsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36m (0.1ms)[0m  [1mSELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218
+  Rendered products/index.html.erb within layouts/review_site (12.4ms)
+Completed 200 OK in 19ms (Views: 13.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:47:07 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:47:07 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:47:07 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:47:07 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:47:07 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:47:07 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:47:07 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:47:07 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:47:07 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:47:07 +0900
+
+
+Started GET "/images/icons/icon-movie-poster.png" for ::1 at 2017-06-15 11:47:07 +0900
+
+ActionController::RoutingError (No route matches [GET] "/images/icons/icon-movie-poster.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.8ms)
+
+
+Started GET "/assets/bambi-1.0.0.ttf?20140712" for ::1 at 2017-06-15 11:47:07 +0900
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-06-15 11:47:08 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rqcPpQBaPtXMYJYFGzOWlB2YUrmAdZ4lVa5rFnWJnDV4z7mvqyFM/pPENFg+SsrEvxLn1UcarI5r9GyAb7RpKQ=="}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 11:47:08 +0900
+Processing by ProductsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  [1m[35mProduct Load (0.5ms)[0m  SELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35m (0.1ms)[0m  SELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218[0m
+  Rendered products/index.html.erb within layouts/review_site (16.3ms)
+Completed 200 OK in 23ms (Views: 16.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:47:08 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:47:08 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:47:08 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:47:08 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:47:08 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:47:08 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:47:08 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:47:08 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:47:08 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:47:08 +0900
+
+
+Started GET "/images/icons/icon-movie-poster.png" for ::1 at 2017-06-15 11:47:08 +0900
+
+ActionController::RoutingError (No route matches [GET] "/images/icons/icon-movie-poster.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.1ms)
+
+
+Started GET "/assets/bambi-1.0.0.ttf?20140712" for ::1 at 2017-06-15 11:47:08 +0900
+
+
+Started GET "/products/search" for ::1 at 2017-06-15 11:47:10 +0900
+Processing by ProductsController#search as HTML
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE (title LIKE('%%')) LIMIT 20[0m
+  Rendered products/search.html.erb within layouts/review_site (2.4ms)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 11:47:12 +0900
+Processing by ProductsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36m (0.1ms)[0m  [1mSELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218
+  Rendered products/index.html.erb within layouts/review_site (16.5ms)
+Completed 200 OK in 24ms (Views: 16.7ms | ActiveRecord: 5.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-06-15 11:49:12 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Rhjj2a8/lx2vlah6t1U2L+23Z16VPwk+sw84zFD9i8qQcFXTBETlNvAxCieSLGp/Tz3SMlJQO5WNVT9aSsB+1g=="}
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-06-15 11:49:12 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 54ms (Views: 22.8ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:49:12 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:49:12 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:49:12 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:49:12 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:49:12 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:49:12 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:49:12 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:49:12 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:49:12 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:49:12 +0900
+
+
+Started POST "/users/sign_in" for ::1 at 2017-06-15 11:49:48 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FzON7x95ciYkiz42D9uoOCLNaQeT++MWjvBTiIfnDgjBWzvltAIADXsvnGsqovRogEfca1SU0b2wqlQendr7FA==", "user"=>{"email"=>"yamada@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'yamada@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FzON7x95ciYkiz42D9uoOCLNaQeT++MWjvBTiIfnDgjBWzvltAIADXsvnGsqovRogEfca1SU0b2wqlQendr7FA==", "user"=>{"email"=>"yamada@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 141ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:49:48 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:49:48 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:49:48 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:49:48 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:49:48 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:49:48 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:49:48 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:49:48 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:49:48 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:49:48 +0900
+
+
+Started GET "/users/sign_up" for ::1 at 2017-06-15 11:49:51 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-06-15 11:50:00 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"idQ1gDWPSMNqI6NHP5r9DKohhLVgsMxHBjy03b5SJelfvIOKnvQ66DWHARoa46FcCKsx2aff/uw4ZrNLpG/Q9Q==", "user"=>{"email"=>"yamada@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (18.7ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'yamada@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('yamada@gmail.com', '$2a$11$fHx02Wut2qYwrXr8wYdAk.XarrT/97jcUE0u.BS7mSvkGUXO.E5pO', '2017-06-15 02:50:00', '2017-06-15 02:50:00')
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2017-06-15 02:50:00', `current_sign_in_at` = '2017-06-15 02:50:00', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2017-06-15 02:50:00' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 179ms (ActiveRecord: 25.1ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 11:50:00 +0900
+Processing by ProductsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  [1m[35mProduct Load (0.5ms)[0m  SELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35m (0.2ms)[0m  SELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218[0m
+  Rendered products/index.html.erb within layouts/review_site (17.9ms)
+Completed 200 OK in 49ms (Views: 19.4ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:50:00 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:50:00 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:50:00 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:50:00 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:50:00 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:50:00 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:50:00 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:50:00 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:50:00 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:50:00 +0900
+
+
+Started GET "/images/icons/icon-movie-poster.png" for ::1 at 2017-06-15 11:50:00 +0900
+
+ActionController::RoutingError (No route matches [GET] "/images/icons/icon-movie-poster.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (66.1ms)
+
+
+Started GET "/assets/bambi-1.0.0.ttf?20140712" for ::1 at 2017-06-15 11:50:01 +0900
+
+
+Started GET "/" for ::1 at 2017-06-15 11:52:03 +0900
+Processing by ProductsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218
+  Rendered products/index.html.erb within layouts/review_site (17.3ms)
+Completed 200 OK in 36ms (Views: 19.8ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:52:03 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:52:03 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:52:03 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:52:03 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:52:03 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:52:03 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:52:03 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:52:03 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:52:03 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:52:03 +0900
+
+
+Started GET "/images/icons/icon-movie-poster.png" for ::1 at 2017-06-15 11:52:03 +0900
+
+ActionController::RoutingError (No route matches [GET] "/images/icons/icon-movie-poster.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (66.4ms)
+
+
+Started GET "/assets/bambi-1.0.0.ttf?20140712" for ::1 at 2017-06-15 11:52:03 +0900
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-06-15 11:52:05 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rstYMJFTCisxEerjfSUPDzhuXSBJxa1x2WLISlTdx1Z4o+46Oih4AG61SL5YXFNfmuToTI6qn9rnOM/cTuAySg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 15ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-06-15 11:52:05 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:52:05 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:52:05 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:52:05 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:52:05 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:52:05 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:52:05 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:52:05 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:52:05 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:52:05 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:52:05 +0900
+
+
+Started GET "/" for ::1 at 2017-06-15 11:52:06 +0900
+Processing by ProductsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36m (0.1ms)[0m  [1mSELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218
+  Rendered products/index.html.erb within layouts/review_site (12.8ms)
+Completed 200 OK in 19ms (Views: 13.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/images/icons/icon-movie-poster.png" for ::1 at 2017-06-15 11:52:06 +0900
+
+ActionController::RoutingError (No route matches [GET] "/images/icons/icon-movie-poster.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.3ms)
+
+
+Started GET "/assets/bambi-1.0.0.ttf?20140712" for ::1 at 2017-06-15 11:52:06 +0900
+
+
+Started GET "/products/76" for ::1 at 2017-06-15 11:52:09 +0900
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  Rendered products/show.html.erb within layouts/review_site (1.6ms)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/76/reviews/new" for ::1 at 2017-06-15 11:52:11 +0900
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"76"}
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  Rendered reviews/new.html.erb within layouts/review_site (5.1ms)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 11:52:16 +0900
+Processing by ProductsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.8ms)[0m  [1mSELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36m (0.1ms)[0m  [1mSELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218
+  Rendered products/index.html.erb within layouts/review_site (14.4ms)
+Completed 200 OK in 21ms (Views: 14.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/products/238" for ::1 at 2017-06-15 11:52:16 +0900
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"238"}
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 238 LIMIT 1
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238[0m
+  Rendered products/show.html.erb within layouts/review_site (0.9ms)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 11:52:18 +0900
+Processing by ProductsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218
+  Rendered products/index.html.erb within layouts/review_site (16.3ms)
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/products/search" for ::1 at 2017-06-15 11:52:20 +0900
+Processing by ProductsController#search as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-06-15 11:52:20 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 11:53:25 +0900
+Processing by ProductsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.9ms)[0m  [1mSELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218
+  Rendered products/index.html.erb within layouts/review_site (16.1ms)
+Completed 200 OK in 23ms (Views: 15.6ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/products/76" for ::1 at 2017-06-15 11:53:26 +0900
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  Rendered products/show.html.erb within layouts/review_site (1.1ms)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/76/reviews/new" for ::1 at 2017-06-15 11:53:29 +0900
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"76"}
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  Rendered reviews/new.html.erb within layouts/review_site (2.3ms)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 11:55:06 +0900
+Processing by ProductsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36m (0.1ms)[0m  [1mSELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218
+  Rendered products/index.html.erb within layouts/review_site (16.6ms)
+Completed 200 OK in 34ms (Views: 18.4ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/products/290" for ::1 at 2017-06-15 11:55:06 +0900
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"290"}
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 290 LIMIT 1
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  Rendered products/show.html.erb within layouts/review_site (1.1ms)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/290/reviews/new" for ::1 at 2017-06-15 11:55:07 +0900
+Processing by ReviewsController#new as HTML
+  Parameters: {"product_id"=>"290"}
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-06-15 11:55:07 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 23ms (Views: 14.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 11:55:51 +0900
+Processing by ProductsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  [1m[35mProduct Load (0.8ms)[0m  SELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35m (0.1ms)[0m  SELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218[0m
+  Rendered products/index.html.erb within layouts/review_site (16.3ms)
+Completed 200 OK in 23ms (Views: 15.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/products/search" for ::1 at 2017-06-15 11:55:58 +0900
+Processing by ProductsController#search as HTML
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-06-15 11:55:58 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 11:55:59 +0900
+Processing by ProductsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  [1m[35mProduct Load (1.0ms)[0m  SELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35m (0.2ms)[0m  SELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218[0m
+  Rendered products/index.html.erb within layouts/review_site (14.8ms)
+Completed 200 OK in 22ms (Views: 14.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 11:58:59 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ProductsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218
+  Rendered products/index.html.erb within layouts/review_site (43.5ms)
+Completed 200 OK in 127ms (Views: 87.4ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-06-15 11:58:59 +0900
+
+
+Started GET "/assets/ranking.css?body=1" for ::1 at 2017-06-15 11:58:59 +0900
+
+
+Started GET "/assets/review_site.css?body=1" for ::1 at 2017-06-15 11:58:59 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-06-15 11:58:59 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-06-15 11:58:59 +0900
+
+
+Started GET "/assets/reviews.css?body=1" for ::1 at 2017-06-15 11:58:59 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-06-15 11:58:59 +0900
+
+
+Started GET "/assets/ranking.js?body=1" for ::1 at 2017-06-15 11:58:59 +0900
+
+
+Started GET "/assets/reviews.js?body=1" for ::1 at 2017-06-15 11:59:00 +0900
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-06-15 11:59:00 +0900
+
+
+Started GET "/images/icons/icon-movie-poster.png" for ::1 at 2017-06-15 11:59:00 +0900
+
+ActionController::RoutingError (No route matches [GET] "/images/icons/icon-movie-poster.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.5ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/ysk/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (87.5ms)
+
+
+Started GET "/assets/bambi-1.0.0.ttf?20140712" for ::1 at 2017-06-15 11:59:00 +0900
+
+
+Started GET "/" for ::1 at 2017-06-15 12:02:12 +0900
+Processing by ProductsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1[0m
+  [1m[35mProduct Load (0.5ms)[0m  SELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35m (0.1ms)[0m  SELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218[0m
+  Rendered products/index.html.erb within layouts/review_site (14.8ms)
+Completed 200 OK in 22ms (Views: 14.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for ::1 at 2017-06-15 12:05:35 +0900
+Processing by ProductsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT  COUNT(`reviews`.`product_id`) AS count_product_id, product_id AS product_id FROM `reviews` GROUP BY `reviews`.`product_id`  ORDER BY count_product_id DESC LIMIT 5
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`id` = 76 LIMIT 1
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT  `products`.* FROM `products`  ORDER BY title ASC LIMIT 20[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 76
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG(`reviews`.`rate`) FROM `reviews` WHERE `reviews`.`product_id` = 76[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 238
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 290[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 200
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 239[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 9
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 29[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 118
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 266[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 283
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 250[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 62
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 220[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 224
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 72[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 134
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 193[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 54
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 159[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 218
+  Rendered products/index.html.erb within layouts/review_site (16.2ms)
+Completed 200 OK in 23ms (Views: 15.0ms | ActiveRecord: 6.1ms)
